@@ -1,0 +1,574 @@
+{
+  "questions": [
+    {
+      "img": "images/Pinzas de Ferguson..png",
+      "choices": ["Pinzas de Kelly", "Pinzas de Ferguson", "Pinzas de Babcock", "Pinzas de Kocher"],
+      "answer": 1
+    },
+    {
+      "img": "images/tijera de potts.png",
+      "choices": ["Tijera de Metzenbaum", "Tijera de Mayo", "Tijera de Stevens", "Tijera de Potts"],
+      "answer": 3
+    },
+    {
+      "img": "images/separador de goelet.png",
+      "choices": ["Separador de Goelet", "Separador de Richardson", "Separador de Farabeuf", "Separador de Roux"],
+      "answer": 0
+    },
+    {
+      "img": "images/monitor cardiaco.png",
+      "choices": ["Pulsioxímetro", "Monitor cardíaco", "Esfigmomanómetro", "Electrocardiógrafo"],
+      "answer": 1
+    },
+    {
+      "img": "images/tijera de stevens.png",
+      "choices": ["Tijera de Doyen", "Tijera de Stevens", "Tijera de Littauer", "Tijera de Potts"],
+      "answer": 1
+    },
+    {
+      "img": "images/grapadora.png",
+      "choices": ["Grapadora quirúrgica", "Cosedora automática", "Aplicador de clips", "Sutura mecánica"],
+      "answer": 0
+    },
+    {
+      "img": "images/punta roma.png",
+      "choices": ["Punta fina", "Punta curva", "Punta roma", "Punta mixta"],
+      "answer": 2
+    },
+    {
+      "img": "images/Pinzas de Pean..png",
+      "choices": ["Pinzas de Kocher", "Pinzas de Pean", "Pinzas de Kelly", "Pinzas de Babcock"],
+      "answer": 1
+    },
+    {
+      "img": "images/martillo.png",
+      "choices": ["Mazo óseo", "Martillo quirúrgico", "Percutor", "Martillo de reflejos"],
+      "answer": 1
+    },
+    {
+      "img": "images/Esfigmomanómetro.png",
+      "choices": ["Esfigmomanómetro", "Tensiómetro", "Monitor de presión", "Baumanómetro"],
+      "answer": 0
+    },
+    {
+      "img": "images/Separador Deaver de pulmón.png",
+      "choices": ["Separador de Richardson", "Separador de Deaver", "Separador de Gosset", "Separador de Balfour"],
+      "answer": 1
+    },
+    {
+      "img": "images/pinzas punta recta.png",
+      "choices": ["Pinzas de agarre", "Pinzas de disección", "Pinzas punta recta", "Pinzas acodadas"],
+      "answer": 2
+    },
+    {
+      "img": "images/sistema de sueros.png",
+      "choices": ["Sistema de goteo", "Equipo de hidratación", "Sistema de sueros", "Bomba de infusión"],
+      "answer": 2
+    },
+    {
+      "img": "images/Tijera Schmieden-Taylor.png",
+      "choices": ["Tijera de Schmieden-Taylor", "Tijera de Taylor", "Tijera de Metzenbaum", "Tijera de Mayo"],
+      "answer": 0
+    },
+    {
+      "img": "images/Periostotomo.png",
+      "choices": ["Legra", "Periostótomo", "Osteótomo", "Cincel óseo"],
+      "answer": 1
+    },
+    {
+      "img": "images/carro de curas.png",
+      "choices": ["Carro de anestesia", "Carro de paradas", "Carro de curas", "Carro de instrumental"],
+      "answer": 2
+    },
+    {
+      "img": "images/pinzas de primer campo.png",
+      "choices": ["Pinzas de Allis", "Pinzas de segundo campo", "Pinzas Backhaus", "Pinzas de primer campo"],
+      "answer": 3
+    },
+    {
+      "img": "images/sierra.png",
+      "choices": ["Sierra eléctrica", "Sierra manual", "Sierra de arco", "Sierra de Gigli"],
+      "answer": 1
+    },
+    {
+      "img": "images/Valva de Tuffier.png",
+      "choices": ["Valva de Allison", "Valva de Tuffier", "Valva de Doyen", "Valva de Fritsch"],
+      "answer": 1
+    },
+    {
+      "img": "images/respirador artificial.png",
+      "choices": ["Ambú", "Respirador artificial", "Equipo de anestesia", "Ventilador mecánico"],
+      "answer": 1
+    },
+    {
+      "img": "images/quitagrapas.png",
+      "choices": ["Extractor de clips", "Quitagrapas", "Removedor de suturas", "Pinza de retiro"],
+      "answer": 1
+    },
+    {
+      "img": "images/Valva de Fritsch.png",
+      "choices": ["Valva de Tuffier", "Valva de Doyen", "Valva de Fritsch", "Valva de Allison"],
+      "answer": 2
+    },
+    {
+      "img": "images/bisturi electrico.png",
+      "choices": ["Electrocauterio", "Bisturí ultrasónico", "Bisturí eléctrico", "Bisturí armónico"],
+      "answer": 2
+    },
+    {
+      "img": "images/aguja seccion cilindrica.png",
+      "choices": ["Aguja espátulada", "Aguja cilíndrica", "Aguja triangular", "Aguja de tapercut"],
+      "answer": 1
+    },
+    {
+      "img": "images/Valva de Doyen.png",
+      "choices": ["Valva de Doyen", "Valva de Allison", "Valva de Fritsch", "Valva de Tuffier"],
+      "answer": 0
+    },
+    {
+      "img": "images/pinzas allis.png",
+      "choices": ["Pinzas de Kocher", "Pinzas de Kelly", "Pinzas de Babcock", "Pinzas de Allis"],
+      "answer": 3
+    },
+    {
+      "img": "images/legras o curetas.png",
+      "choices": ["Raspadores", "Legras o curetas", "Gubias", "Cucharillas"],
+      "answer": 1
+    },
+    {
+      "img": "images/portagujas automatico.png",
+      "choices": ["Portagujas de Gillies", "Portagujas Mayo", "Portagujas de Mathieu", "Portagujas automático"],
+      "answer": 3
+    },
+    {
+      "img": "images/agrafes.png",
+      "choices": ["Agrafes", "Grapas quirúrgicas", "Clips hemostáticos", "Sujetadores"],
+      "answer": 0
+    },
+    {
+      "img": "images/pinzas punta con dientes.png",
+      "choices": ["Pinzas con dientes", "Pinzas de Adson", "Pinzas sin dientes", "Pinzas de disección"],
+      "answer": 0
+    },
+    {
+      "img": "images/bisturi ultrasonico.png",
+      "choices": ["Bisturí armónico", "Bisturí ultrasónico", "Bisturí láser", "Bisturí eléctrico"],
+      "answer": 1
+    },
+    {
+      "img": "images/sierra de arco.png",
+      "choices": ["Sierra de arco", "Sierra de Gigli", "Sierra eléctrica", "Sierra de mano"],
+      "answer": 0
+    },
+    {
+      "img": "images/cucharillas.png",
+      "choices": ["Legras", "Gubias", "Curetas", "Cucharillas"],
+      "answer": 3
+    },
+    {
+      "img": "images/pinza acodada.png",
+      "choices": ["Pinza recta", "Pinza angular", "Pinza acodada", "Pinza curva"],
+      "answer": 2
+    },
+    {
+      "img": "images/aguja seccion espatulada.png",
+      "choices": ["Aguja espátulada", "Aguja de tapercut", "Aguja cilíndrica", "Aguja triangular"],
+      "answer": 0
+    },
+    {
+      "img": "images/Tijera de Littauer.png",
+      "choices": ["Tijera de Mayo", "Tijera de Stevens", "Tijera de Littauer", "Tijera de Metzenbaum"],
+      "answer": 2
+    },
+    {
+      "img": "images/cateter drum.png",
+      "choices": ["Catéter Robinson", "Catéter Foley", "Catéter Drum", "Catéter Nelaton"],
+      "answer": 2
+    },
+    {
+      "img": "images/Aproximador costal Bailey Gibbon.png",
+      "choices": ["Aproximador costal Bailey-Gibbon", "Retractor torácico", "Compresor costal", "Separador costal"],
+      "answer": 0
+    },
+    {
+      "img": "images/tijera lister o abotonada.png",
+      "choices": ["Tijera de Metzenbaum", "Tijera de Potts", "Tijera de Mayo", "Tijera de Lister"],
+      "answer": 3
+    },
+    {
+      "img": "images/Pinzas acodadas.png",
+      "choices": ["Pinzas en bayoneta", "Pinzas acodadas", "Pinzas curvas", "Pinzas rectas"],
+      "answer": 1
+    },
+    {
+      "img": "images/separador roux.png",
+      "choices": ["Separador de Richardson", "Separador de Goelet", "Separador de Farabeuf", "Separador de Roux"],
+      "answer": 3
+    },
+    {
+      "img": "images/separador farabeuf.png",
+      "choices": ["Separador de Goelet", "Separador de Farabeuf", "Separador de Richardson", "Separador de Roux"],
+      "answer": 1
+    },
+    {
+      "img": "images/Tijera acodada de puntas romas.png",
+      "choices": ["Tijera acodada de puntas romas", "Tijera de Potts", "Tijera de Mayo", "Tijera de Metzenbaum"],
+      "answer": 0
+    },
+    {
+      "img": "images/carro de paradas.png",
+      "choices": ["Carro de emergencia", "Carro de curas", "Carro de paradas", "Carro de reanimación"],
+      "answer": 2
+    },
+    {
+      "img": "images/Tijera de Metzenbaum.png",
+      "choices": ["Tijera de Mayo", "Tijera de Stevens", "Tijera de Potts", "Tijera de Metzenbaum"],
+      "answer": 3
+    },
+    {
+      "img": "images/Separador abdominal de Balfour.png",
+      "choices": ["Separador de Gosset", "Separador de Deaver", "Separador de Balfour", "Separador de Richardson"],
+      "answer": 2
+    },
+    {
+      "img": "images/especulo de sims.png",
+      "choices": ["Espéculo de Sims", "Espéculo bucal", "Espéculo nasal", "Espéculo vaginal"],
+      "answer": 0
+    },
+    {
+      "img": "images/pinza de foester.png",
+      "choices": ["Pinza de Babcock", "Pinza de Kocher", "Pinza de Foerster", "Pinza de Kelly"],
+      "answer": 2
+    },
+    {
+      "img": "images/Espéculo Vaginal.png",
+      "choices": ["Espéculo de Cusco", "Espéculo de Graves", "Espéculo de Sims", "Espéculo vaginal"],
+      "answer": 3
+    },
+    {
+      "img": "images/aguja seccion de tapercut.png",
+      "choices": ["Aguja de tapercut", "Aguja triangular", "Aguja espátulada", "Aguja cilíndrica"],
+      "answer": 0
+    },
+    {
+      "img": "images/raspador costal.png",
+      "choices": ["Periostótomo", "Legra", "Raspador costal", "Cureta"],
+      "answer": 2
+    },
+    {
+      "img": "images/punta mixta.png",
+      "choices": ["Punta curva", "Punta mixta", "Punta fina", "Punta roma"],
+      "answer": 1
+    },
+    {
+      "img": "images/escalpelo.png",
+      "choices": ["Cuchillo quirúrgico", "Escalpelo", "Bisturí", "Cuchilla"],
+      "answer": 1
+    },
+    {
+      "img": "images/agujas de sutura.png",
+      "choices": ["Hilos quirúrgicos", "Suturas", "Portagujas", "Agujas de sutura"],
+      "answer": 3
+    },
+    {
+      "img": "images/pinza de braun.png",
+      "choices": ["Pinza de Kelly", "Pinza de Braun", "Pinza de Pean", "Pinza de Kocher"],
+      "answer": 1
+    },
+    {
+      "img": "images/valva de allison.png",
+      "choices": ["Valva de Fritsch", "Valva de Allison", "Valva de Doyen", "Valva de Tuffier"],
+      "answer": 1
+    },
+    {
+      "img": "images/escoplos.png",
+      "choices": ["Gubias", "Escoplos", "Cinceles", "Legras"],
+      "answer": 1
+    },
+    {
+      "img": "images/goma Smarch o compresor.png",
+      "choices": ["Compresor de Smarch", "Manguito de presión", "Compresor hemostático", "Torniquete"],
+      "answer": 0
+    },
+    {
+      "img": "images/aguja seccion triangular.png",
+      "choices": ["Aguja de tapercut", "Aguja triangular", "Aguja cilíndrica", "Aguja espátulada"],
+      "answer": 1
+    },
+    {
+      "img": "images/Pinzas Backhaus.png",
+      "choices": ["Pinzas de campo", "Pinzas de Allis", "Pinzas de towel", "Pinzas Backhaus"],
+      "answer": 3
+    },
+    {
+      "img": "images/tijera de doyen.png",
+      "choices": ["Tijera de Doyen", "Tijera de Metzenbaum", "Tijera de Mayo", "Tijera de Potts"],
+      "answer": 0
+    },
+    {
+      "img": "images/Pinza de Kelly.png",
+      "choices": ["Pinza de Babcock", "Pinza de Kocher", "Pinza de Kelly", "Pinza de Pean"],
+      "answer": 2
+    },
+    {
+      "img": "images/Pinzas en bayoneta.png",
+      "choices": ["Pinzas rectas", "Pinzas curvas", "Pinzas en bayoneta", "Pinzas acodadas"],
+      "answer": 2
+    },
+    {
+      "img": "images/Separador o valva Mikulicz.png",
+      "choices": ["Valva de Doyen", "Valva de Tuffier", "Valva de Mikulicz", "Valva de Allison"],
+      "answer": 2
+    },
+    {
+      "img": "images/Extensor de trépano.png",
+      "choices": ["Perforador óseo", "Extensor de trépano", "Trépano", "Taladro quirúrgico"],
+      "answer": 1
+    },
+    {
+      "img": "images/separador adson.png",
+      "choices": ["Separador de Richardson", "Separador de Adson", "Separador de Farabeuf", "Separador de Goelet"],
+      "answer": 1
+    },
+    {
+      "img": "images/Costótomo de Schoemaker.png",
+      "choices": ["Cizalla costal", "Cortador de costillas", "Costótomo de Schoemaker", "Costótomo de Giertz"],
+      "answer": 2
+    },
+    {
+      "img": "images/pinzas de michel.png",
+      "choices": ["Pinzas de Allis", "Pinzas de Michel", "Pinzas de Babcock", "Pinzas de Kocher"],
+      "answer": 1
+    },
+    {
+      "img": "images/Costótomo angulado Giertz.png",
+      "choices": ["Tijera costal", "Cizalla costal", "Costótomo de Schoemaker", "Costótomo de Giertz"],
+      "answer": 3
+    },
+    {
+      "img": "images/portagujas mayo.png",
+      "choices": ["Portagujas automático", "Portagujas de Gillies", "Portagujas de Mathieu", "Portagujas Mayo"],
+      "answer": 3
+    },
+    {
+      "img": "images/pinzas de segundo campo.png",
+      "choices": ["Pinzas Backhaus", "Pinzas de primer campo", "Pinzas de Allis", "Pinzas de segundo campo"],
+      "answer": 3
+    },
+    {
+      "img": "images/bisturi armonico.png",
+      "choices": ["Bisturí eléctrico", "Bisturí ultrasónico", "Bisturí láser", "Bisturí armónico"],
+      "answer": 3
+    },
+    {
+      "img": "images/Pinzas de cístico o Mixter.png",
+      "choices": ["Pinzas de Mixter", "Pinzas de Kelly", "Pinzas de Pean", "Pinzas de Kocher"],
+      "answer": 0
+    },
+    {
+      "img": "images/bisturi manual.png",
+      "choices": ["Cuchillo quirúrgico", "Escalpelo", "Cuchilla", "Bisturí manual"],
+      "answer": 3
+    },
+    {
+      "img": "images/tenotomos.png",
+      "choices": ["Fasciótomos", "Tenótomos", "Dermatomos", "Osteótomos"],
+      "answer": 1
+    },
+    {
+      "img": "images/pinzas de randall.png",
+      "choices": ["Pinzas de Kelly", "Pinzas de Randall", "Pinzas de Babcock", "Pinzas de Kocher"],
+      "answer": 1
+    },
+    {
+      "img": "images/espejo frontal.png",
+      "choices": ["Endoscopio", "Lupa quirúrgica", "Espejo frontal", "Microscopio"],
+      "answer": 2
+    },
+    {
+      "img": "images/bisturi laser.png",
+      "choices": ["Bisturí armónico", "Bisturí ultrasónico", "Bisturí láser", "Bisturí eléctrico"],
+      "answer": 2
+    },
+    {
+      "img": "images/carro ropa limpia.png",
+      "choices": ["Carro de ropa sucia", "Carro de lencería", "Carro de almacenamiento", "Carro de ropa limpia"],
+      "answer": 3
+    },
+    {
+      "img": "images/Tenedor de Volkmann..png",
+      "choices": ["Cucharilla de Volkmann", "Gancho de Volkmann", "Tenedor de Volkmann", "Raspador de Volkmann"],
+      "answer": 2
+    },
+    {
+      "img": "images/tijera mayo.png",
+      "choices": ["Tijera de Metzenbaum", "Tijera de Mayo", "Tijera de Potts", "Tijera de Stevens"],
+      "answer": 1
+    },
+    {
+      "img": "images/Pinzas sujetahuesos.png",
+      "choices": ["Pinzas de fijación", "Pinzas de reducción", "Pinzas sujetahuesos", "Pinzas de hueso"],
+      "answer": 2
+    },
+    {
+      "img": "images/gubias.png",
+      "choices": ["Curetas", "Gubias", "Legras", "Cucharillas"],
+      "answer": 1
+    },
+    {
+      "img": "images/Pinzas de Kocher.png",
+      "choices": ["Pinzas de Allis", "Pinzas de Kelly", "Pinzas de Babcock", "Pinzas de Kocher"],
+      "answer": 3
+    },
+    {
+      "img": "images/trépanos.png",
+      "choices": ["Brocas quirúrgicas", "Taladros óseos", "Perforadores", "Trépanos"],
+      "answer": 3
+    },
+    {
+      "img": "images/Pinzas rectas.png",
+      "choices": ["Pinzas rectas", "Pinzas acodadas", "Pinzas en bayoneta", "Pinzas curvas"],
+      "answer": 0
+    },
+    {
+      "img": "images/sonda anacalada.png",
+      "choices": ["Sonda Foley", "Sonda Nelaton", "Sonda acodada", "Sonda recta"],
+      "answer": 2
+    },
+    {
+      "img": "images/punta fina.png",
+      "choices": ["Punta fina", "Punta roma", "Punta curva", "Punta mixta"],
+      "answer": 0
+    },
+    {
+      "img": "images/cuchillos de amputacion.png",
+      "choices": ["Cuchillos de disección", "Cuchillos de amputar", "Cuchillos de incisión", "Cuchillos de amputación"],
+      "answer": 3
+    },
+    {
+      "img": "images/costotomos.png",
+      "choices": ["Cizallas costales", "Cortadores de costilla", "Separadores costales", "Costótomos"],
+      "answer": 3
+    },
+    {
+      "img": "images/Pinzas Rochester-Pean.png",
+      "choices": ["Pinzas de Pean", "Pinzas Rochester-Pean", "Pinzas de Kelly", "Pinzas de Kocher"],
+      "answer": 1
+    },
+    {
+      "img": "images/estiletes.png",
+      "choices": ["Mandrinos", "Sondas", "Estiletes", "Guias"],
+      "answer": 2
+    },
+    {
+      "img": "images/Cucharilla de Volkman.png",
+      "choices": ["Gancho de Volkmann", "Tenedor de Volkmann", "Cucharilla de Volkmann", "Raspador de Volkmann"],
+      "answer": 2
+    },
+    {
+      "img": "images/Pinza de Desjardins..png",
+      "choices": ["Pinza de Desjardins", "Pinza de Babcock", "Pinza de Kelly", "Pinza de Kocher"],
+      "answer": 0
+    },
+    {
+      "img": "images/Fonendoscopio o estetoscopio.png",
+      "choices": ["Pulsioxímetro", "Esfigmomanómetro", "Fonendoscopio", "Electrocardiógrafo"],
+      "answer": 2
+    },
+    {
+      "img": "images/otoscopio y especulo.png",
+      "choices": ["Laringoscopio", "Rinoscopio", "Oftalmoscopio", "Otoscopio"],
+      "answer": 3
+    },
+    {
+      "img": "images/cureta uterina.png",
+      "choices": ["Cucharilla ginecológica", "Cureta uterina", "Legra uterina", "Raspador endometrial"],
+      "answer": 1
+    },
+    {
+      "img": "images/Pinzas triangulares de Duval-Collin.png",
+      "choices": ["Pinzas de Duval-Collin", "Pinzas de agarre", "Pinzas triangulares", "Pinzas de disección"],
+      "answer": 0
+    },
+    {
+      "img": "images/mariposas o palomillas.png",
+      "choices": ["Grapas de piel", "Sujetadores", "Clips vasculares", "Mariposas o palomillas"],
+      "answer": 3
+    },
+    {
+      "img": "images/carro ropa sucia.png",
+      "choices": ["Carro de desechos", "Carro de ropa limpia", "Carro de residuos", "Carro de ropa sucia"],
+      "answer": 3
+    },
+    {
+      "img": "images/cizallas.png",
+      "choices": ["Guillotina ósea", "Tijeras óseas", "Cizallas", "Cortadores de hueso"],
+      "answer": 2
+    },
+    {
+      "img": "images/Separador Cooley.png",
+      "choices": ["Separador de Richardson", "Separador de Deaver", "Separador de Cooley", "Separador de Balfour"],
+      "answer": 2
+    },
+    {
+      "img": "images/Aspirador nasogástrico.png",
+      "choices": ["Bomba de succión", "Sonda de aspiración", "Equipo de drenaje", "Aspirador nasogástrico"],
+      "answer": 3
+    },
+    {
+      "img": "images/Separador abdominal de Gosset.png",
+      "choices": ["Separador de Gosset", "Separador de Balfour", "Separador de Richardson", "Separador de Deaver"],
+      "answer": 0
+    },
+    {
+      "img": "images/Pinzas de Crille.png",
+      "choices": ["Pinzas de Kelly", "Pinzas de Crille", "Pinzas de Pean", "Pinzas de Kocher"],
+      "answer": 1
+    },
+    {
+      "img": "images/Pinza de Babcock.png",
+      "choices": ["Pinza de Kocher", "Pinza de Babcock", "Pinza de Allis", "Pinza de Kelly"],
+      "answer": 1
+    },
+    {
+      "img": "images/Separador de Richardson.png",
+      "choices": ["Separador de Deaver", "Separador de Goelet", "Separador de Roux", "Separador de Richardson"],
+      "answer": 3
+    },
+    {
+      "img": "images/bisturi desechable.png",
+      "choices": ["Cuchilla estéril", "Bisturí de un solo uso", "Escalpelo desechable", "Bisturí desechable"],
+      "answer": 3
+    },
+    {
+      "img": "images/Pulsioxímetro.png",
+      "choices": ["Monitor de saturación", "Pulsioxímetro", "Sensor de oxígeno", "Oximetro de pulso"],
+      "answer": 1
+    },
+    {
+      "img": "images/Miringotomo.png",
+      "choices": ["Timpanótomo", "Microscopio otológico", "Miringótomo", "Otoscopio"],
+      "answer": 2
+    },
+    {
+      "img": "images/Punzón óseo Kerrison.png",
+      "choices": ["Perforador de Kerrison", "Punzón de Kerrison", "Perforador espinal", "Punzón óseo"],
+      "answer": 1
+    },
+    {
+      "img": "images/Pinzas de coprostasis o clamps.png",
+      "choices": ["Pinzas de compresión", "Clamps intestinales", "Pinzas de oclusión", "Pinzas de coprostasis"],
+      "answer": 3
+    },
+    {
+      "img": "images/Pinzas de curación uterina o vaginal.png",
+      "choices": ["Pinzas ginecológicas", "Pinzas de Allis", "Pinzas de tenaculum", "Pinzas de curación uterina"],
+      "answer": 3
+    },
+    {
+      "img": "images/mascara de oxigeno.png",
+      "choices": ["Mascarilla de O2", "Cánula nasal", "Reservorio de oxígeno", "Máscara de oxígeno"],
+      "answer": 3
+    }
+  ]
+}
