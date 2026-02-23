@@ -3,20 +3,19 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Test Higiene</title>
+<title>Quiz interactivo</title>
 <style>
 :root{--bg:#f0f4f8;--card:#ffffff;--accent:#0ea5a4;--muted:#6b7280;--ok:#16a34a;--bad:#ef4444}
 html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
 body{background:var(--bg);color:#072128;display:flex;align-items:flex-start;justify-content:center;padding:18px}
-.wrap{width:100%;max-width:920px}
+.wrap{width:100%;max-width:820px}
 header{display:flex;gap:12px;align-items:center;margin-bottom:14px}
 .brand{background:linear-gradient(90deg,var(--accent),#7c3aed);padding:10px 14px;border-radius:12px;font-weight:700;color:white}
 .card{background:var(--card);padding:16px;border-radius:14px;box-shadow:0 6px 18px rgba(15,23,42,0.06);margin-bottom:12px}
 .question{padding:12px;border-radius:10px;margin-bottom:10px;background:rgba(2,6,23,0.02)}
 h1{font-size:20px;margin:0}
-.small{color:var(--muted);font-size:13px}
 .choices{display:flex;flex-direction:column;gap:8px;margin-top:8px}
-label.choice{display:flex;gap:10px;align-items:flex-start;padding:10px;border-radius:10px;border:1px solid rgba(2,6,23,0.04);cursor:pointer;background:transparent}
+label.choice{display:flex;gap:10px;align-items:flex-start;padding:10px;border-radius:10px;border:1px solid rgba(2,6,23,0.04);cursor:pointer}
 input[type=radio]{margin-top:3px}
 .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 button{background:var(--accent);border:none;padding:10px 12px;border-radius:10px;color:white;font-weight:700;cursor:pointer}
@@ -26,306 +25,179 @@ button.ghost{background:transparent;color:var(--accent);border:1px solid rgba(2,
 .correct{border-left:5px solid var(--ok)}
 .incorrect{border-left:5px solid var(--bad)}
 footer{margin-top:10px;color:var(--muted);font-size:13px}
-.preview-img{max-width:100%;border-radius:8px;margin-top:8px}
-.q-thumb{max-width:120px;display:block;margin-top:8px;border-radius:8px}
-.builder-list img{max-width:80px;border-radius:8px}
-.list-item{display:flex;gap:10px;align-items:center;margin-top:8px;padding:8px;border-radius:8px;background:rgba(2,6,23,0.02)}
-.list-item img{max-width:80px;border-radius:8px}
-#adminBtn{position:fixed;bottom:14px;left:14px;z-index:999;padding:8px 12px;border-radius:8px}
-@media (max-width:420px){h1{font-size:18px}.brand{padding:8px 10px}}
+@media (max-width:480px){.wrap{padding:10px}.brand{padding:8px 10px}.card{padding:12px}}
 </style>
 </head>
+
 <body>
 <div class="wrap">
 <header>
-  <div class="brand">Higiene</div>
-  <div><h1>Test Tema 5</h1></div>
+  <div class="brand">Quiz</div>
+  <div><h1>Quiz interactivo</h1></div>
 </header>
 
-<!-- BUILDER (admin) -->
-<div id="builder" class="card" style="display:none">
-  <strong>Modo administrador</strong>
-  <p class="small">Sube desde tu PC o pega URL. Añade las 4 opciones y marca la correcta. Exporta el JSON y súbelo a Neocities.</p>
+<main class="card" id="app">
 
-  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
-    <input id="imgFile" type="file" accept="image/*">
-    <input id="imgUrl" placeholder="O pega URL de imagen (opcional)" style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(2,6,23,0.06)">
-  </div>
-  <img id="imgPreview" class="preview-img" style="display:none">
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
-    <input id="c0" placeholder="a)" style="padding:8px;border-radius:8px;border:1px solid rgba(2,6,23,0.06)">
-    <input id="c1" placeholder="b)" style="padding:8px;border-radius:8px;border:1px solid rgba(2,6,23,0.06)">
-    <input id="c2" placeholder="c)" style="padding:8px;border-radius:8px;border:1px solid rgba(2,6,23,0.06)">
-    <input id="c3" placeholder="d)" style="padding:8px;border-radius:8px;border:1px solid rgba(2,6,23,0.06)">
-  </div>
-
-  <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
-    <label>Respuesta correcta: </label>
-    <select id="correct">
-      <option value="0">a)</option>
-      <option value="1">b)</option>
-      <option value="2">c)</option>
-      <option value="3">d)</option>
-    </select>
-    <button id="addBtn" style="margin-left:auto">Añadir</button>
-    <button id="exportBtn" class="ghost">Exportar test (JSON)</button>
-  </div>
-
-  <h3 style="margin-top:12px">Preguntas añadidas</h3>
-  <div id="list" class="builder-list"></div>
-  <p class="small" style="margin-top:8px">Consejo: las imágenes grandes se guardan como dataURL dentro del JSON.</p>
+<!-- SELECTOR -->
+<div style="margin-bottom:12px">
+  <label><strong>Selecciona el test:</strong></label>
+  <select id="testSelector">
+    <option value="1">Cultura general</option>
+    <option value="2">Entretenimiento</option>
+    <option value="3">Demo Frontend</option>
+  </select>
 </div>
 
-<!-- QUIZ -->
-<main id="quizAreaMain" class="card" style="display:none">
-  <div id="quizCard"></div>
+<div id="quiz-area"></div>
 
-  <div class="controls" style="margin-top:12px">
-    <button id="prevBtn" class="ghost">Anterior</button>
-    <button id="nextBtn" class="ghost">Siguiente</button>
-    <button id="finishTestBtn">Terminar</button>
-    <button id="restartBtn" class="ghost">Reiniciar</button>
-    <label style="margin-left:auto" class="chip">Preguntas: <span id="count">0</span></label>
-  </div>
+<div class="controls">
+  <button id="prevBtn" class="ghost">Anterior</button>
+  <button id="nextBtn" class="ghost">Siguiente</button>
+  <button id="finishBtn">Terminar</button>
+  <button id="restartBtn" class="ghost">Reiniciar</button>
+  <label style="margin-left:auto" class="chip">
+    Preguntas: <span id="count">0</span>
+  </label>
+</div>
 
-  <div id="results" style="margin-top:12px;display:none" class="card"></div>
-  <footer>Buena suerte!!!.</footer>
+<div id="results" style="margin-top:10px;display:none" class="card"></div>
+<footer>Buena suerte 🍀 </footer>
 </main>
-
 </div>
-
-<!-- Admin button (always visible but protected) -->
-<button id="adminBtn" class="ghost">Admin</button>
 
 <script>
-// ----------------- Config & state -----------------
-const STORAGE_KEY = 'img_quiz_questions'; // not used for deployment but good to have
-let questions = [];        // array of {img, choices[], answer}
-let locked = false;        // true when we have data.json / test mode
+// ===== TEST 1 (Cultura general — juego) =====
+const test1 = [
+  {"q":"¿Cuál es el planeta más cercano al Sol?","choices":["Venus","Mercurio","Marte","Júpiter"],"answer":1},
+  {"q":"¿Cuántos continentes hay en la Tierra (modelo más común)?","choices":["5","6","7","8"],"answer":2},
+  {"q":"¿Quién pintó la Mona Lisa?","choices":["Pablo Picasso","Leonardo da Vinci","Van Gogh","Salvador Dalí"],"answer":1},
+  {"q":"¿Cuál es el océano más grande del mundo?","choices":["Atlántico","Índico","Ártico","Pacífico"],"answer":3},
+  {"q":"¿En qué país se encuentra la Torre Eiffel?","choices":["Italia","Francia","Alemania","Portugal"],"answer":1},
+  {"q":"¿Cuántos días tiene un año bisiesto?","choices":["364","365","366","367"],"answer":2},
+  {"q":"¿Cuál es el animal terrestre más rápido?","choices":["León","Guepardo","Caballo","Tigre"],"answer":1},
+  {"q":"¿Qué idioma tiene más hablantes nativos?","choices":["Inglés","Español","Mandarín","Hindi"],"answer":2},
+  {"q":"¿Cuál es el metal cuyo símbolo es Au?","choices":["Plata","Oro","Aluminio","Cobre"],"answer":1},
+  {"q":"¿Qué instrumento mide la temperatura?","choices":["Barómetro","Termómetro","Higrómetro","Velocímetro"],"answer":1},
+  {"q":"¿Cuántos jugadores hay en un equipo de fútbol en el campo?","choices":["9","10","11","12"],"answer":2},
+  {"q":"¿Cuál es la capital de Japón?","choices":["Seúl","Pekín","Tokio","Bangkok"],"answer":2}
+];
+
+// ===== TEST 2 (Entretenimiento y curiosidades — juego) =====
+const test2 = [
+  {"q":"¿Qué saga tiene personajes como Frodo y Gandalf?","choices":["Harry Potter","El Señor de los Anillos","Star Wars","Narnia"],"answer":1},
+  {"q":"¿Qué empresa creó el iPhone?","choices":["Samsung","Microsoft","Apple","Google"],"answer":2},
+  {"q":"¿Cuál es el videojuego más vendido de la historia?","choices":["GTA V","Minecraft","Tetris","Wii Sports"],"answer":1},
+  {"q":"¿Qué superhéroe es Bruce Wayne?","choices":["Iron Man","Batman","Spider‑Man","Hulk"],"answer":1},
+  {"q":"¿Qué red social se caracteriza por vídeos cortos verticales y virales?","choices":["Facebook","TikTok","LinkedIn","Pinterest"],"answer":1},
+  {"q":"¿Cuál es la moneda oficial de la Unión Europea en muchos países?","choices":["Dólar","Euro","Libra","Yen"],"answer":1},
+  {"q":"¿Qué deporte practica Rafa Nadal?","choices":["Fútbol","Baloncesto","Tenis","Golf"],"answer":2},
+  {"q":"¿Cuál es el emoji generalmente asociado al amor?","choices":["Corazón rojo","Fuego","Estrella","Rayo"],"answer":0},
+  {"q":"¿Qué bebida se obtiene al moler granos tostados?","choices":["Té","Café","Cacao","Leche"],"answer":1},
+  {"q":"¿Cuál es el país famoso por las pizzas y el Coliseo?","choices":["Grecia","Italia","España","Turquía"],"answer":1},
+  {"q":"¿Qué aplicación se usa principalmente para enviar mensajes instantáneos en móviles?","choices":["WhatsApp","Excel","Word","Photoshop"],"answer":0},
+  {"q":"¿Qué estación del año sigue al verano en el hemisferio norte?","choices":["Invierno","Primavera","Otoño","Monzón"],"answer":2}
+];
+
+// ===== TEST 3 (Demo — Frontend, preguntas de ejemplo para tu portfolio) =====
+const test3 = [
+  {"q":"¿Cuál de estas etiquetas HTML define un enlace?","choices":["<img>","<a>","<div>","<span>"],"answer":1},
+  {"q":"¿Qué propiedad CSS cambia el color de fondo?","choices":["color","background-color","font-size","margin"],"answer":1},
+  {"q":"¿Qué significa " + 'DOM' + " en desarrollo web?","choices":["Document Object Model","Data Object Method","Document Of Markup","Dynamic Object Memory"],"answer":0},
+  {"q":"En JavaScript, ¿cómo se declara una constante?","choices":["let PI = 3.14;","var PI = 3.14;","const PI = 3.14;","fixed PI = 3.14;"],"answer":2},
+  {"q":"¿Qué metaetiqueta ayuda a que una página sea responsive en móviles?","choices":["<meta name=\"viewport\">","<meta name=\"robots\">","<link rel=\"canonical\">","<meta charset=\"utf-8\">"],"answer":0},
+  {"q":"¿Qué significa " + 'ARIA' + " en accesibilidad web?","choices":["Accessible Rich Internet Applications","Advanced Responsive Image Attributes","Automatic Reading Indexing API","Accessible Resource Interface for Apps"],"answer":0},
+  {"q":"¿Cuál es el propósito de usar etiquetas semánticas (header, main, footer)?","choices":["Mejorar accesibilidad y SEO","Hacer que el CSS no funcione","Ocultar contenido","Solo por estética"],"answer":0},
+  {"q":"¿Qué herramienta se usa para ver y depurar HTML/CSS en el navegador?","choices":["Terminal","DevTools (herramientas del desarrollador)","Bloc de notas","FTP"],"answer":1}
+];
+
+// ===== ESTADO =====
+let questions = [];
 let current = 0;
-let answers = [];          // user's answers for each question
-let currentImgData = null; // when adding in admin
+let answers = [];
 
-// DOM elements
-const builder = document.getElementById('builder');
-const imgFile = document.getElementById('imgFile');
-const imgUrl = document.getElementById('imgUrl');
-const imgPreview = document.getElementById('imgPreview');
-const addBtn = document.getElementById('addBtn');
-const exportBtn = document.getElementById('exportBtn');
-const listEl = document.getElementById('list');
-
-const quizAreaMain = document.getElementById('quizAreaMain');
-const quizCard = document.getElementById('quizCard');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const finishTestBtn = document.getElementById('finishTestBtn');
-const restartBtn = document.getElementById('restartBtn');
+const quizArea = document.getElementById('quiz-area');
 const countEl = document.getElementById('count');
 const resultsEl = document.getElementById('results');
-const adminBtn = document.getElementById('adminBtn');
 
-// ----------------- Try to load data.json on page load -----------------
-fetch('data.json')
-  .then(r=>{
-    if(!r.ok) throw new Error('no json');
-    return r.json();
-  })
-  .then(data=>{
-    if(data && Array.isArray(data.questions) && data.questions.length>0){
-      questions = data.questions;
-      locked = true;          // we loaded a hosted test -> lock admin by default
-      builder.style.display = 'none';
-      quizAreaMain.style.display = 'block';
-      startQuiz();
-    } else {
-      throw new Error('json empty');
-    }
-  })
-  .catch(()=>{ 
-    // no data.json or error -> developer/admin mode
-    locked = false;
-    builder.style.display = 'block';
-    quizAreaMain.style.display = 'none';
-    renderList();
-  });
-
-// ----------------- ADMIN: image input handling -----------------
-imgFile.addEventListener('change', e=>{
-  const file = e.target.files && e.target.files[0];
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload = ev => {
-    currentImgData = ev.target.result;
-    imgPreview.src = currentImgData;
-    imgPreview.style.display = 'block';
-    imgUrl.value = '';
-  };
-  reader.readAsDataURL(file);
-});
-
-imgUrl.addEventListener('input', ()=>{
-  const v = imgUrl.value.trim();
-  if(v){
-    currentImgData = v;
-    imgPreview.src = v;
-    imgPreview.style.display = 'block';
-    imgFile.value = '';
-  }
-});
-
-// ----------------- ADMIN: add question -----------------
-addBtn.addEventListener('click', ()=>{
-  const choices = [
-    (document.getElementById('c0').value || '').trim(),
-    (document.getElementById('c1').value || '').trim(),
-    (document.getElementById('c2').value || '').trim(),
-    (document.getElementById('c3').value || '').trim()
-  ];
-  const correct = parseInt(document.getElementById('correct').value, 10);
-  if(!currentImgData){ alert('Sube o pega una imagen'); return; }
-  if(choices.some(c=>c==='')){ alert('Rellena las 4 opciones'); return; }
-  questions.push({ img: currentImgData, choices, answer: correct });
-  // clear inputs
-  currentImgData = null;
-  imgPreview.style.display = 'none';
-  imgFile.value = '';
-  imgUrl.value = '';
-  document.getElementById('c0').value=''; document.getElementById('c1').value=''; document.getElementById('c2').value=''; document.getElementById('c3').value='';
-  renderList();
-});
-
-// ----------------- ADMIN: render list -----------------
-function renderList(){
-  listEl.innerHTML = '';
-  if(questions.length === 0){
-    listEl.innerHTML = '<p class="small">No hay preguntas añadidas aún.</p>';
-    countEl && (countEl.innerText = 0);
-    return;
-  }
-  questions.forEach((q, i) => {
-    const item = document.createElement('div');
-    item.className = 'list-item';
-    item.innerHTML = `<img src="${q.img}" alt="thumb"><div style="flex:1"><div style="font-weight:700">Pregunta ${i+1}</div><div class="small">Correcta: ${String.fromCharCode(97+q.answer)}) ${q.choices[q.answer]}</div></div>`;
-    const del = document.createElement('button'); del.textContent = 'Eliminar'; del.className = 'ghost';
-    del.onclick = ()=>{ if(confirm('Eliminar esta pregunta?')){ questions.splice(i,1); renderList(); } };
-    item.appendChild(del);
-    listEl.appendChild(item);
-  });
-  countEl && (countEl.innerText = questions.length);
-}
-
-// ----------------- ADMIN: export JSON -----------------
-exportBtn.addEventListener('click', ()=>{
-  if(questions.length===0){ alert('No hay preguntas para exportar'); return; }
-  const data = JSON.stringify({ questions }, null, 2);
-  const blob = new Blob([data], { type: 'application/json' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'data.json';
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-});
-
-// ----------------- QUIZ: start / render -----------------
-function startQuiz(){
+// ===== FUNCIONES =====
+function loadTest(n){
+  if(n === 1) questions = test1;
+  else if(n === 2) questions = test2;
+  else questions = test3;
   answers = Array(questions.length).fill(undefined);
   current = 0;
   resultsEl.style.display = 'none';
-  renderQuestion(current);
+  renderQuestion(0);
 }
 
 function renderQuestion(i){
   const q = questions[i];
-  quizCard.innerHTML = '';
-  const wrapper = document.createElement('div'); wrapper.className = 'question';
-  wrapper.innerHTML = `<strong>Pregunta ${i+1}.</strong>`;
-  // image
-  if(q && q.img){
-    const img = document.createElement('img');
-    img.src = q.img;
-    img.alt = 'Pregunta ' + (i+1);
-    img.className = 'preview-img';
-    wrapper.appendChild(img);
-  }
-  // choices
+  quizArea.innerHTML = '';
+
+  // ===== Barajar respuestas =====
+  const indexedChoices = q.choices.map((text,idx)=>({text,idx}));
+  const shuffled = indexedChoices.sort(()=>Math.random()-0.5);
+
+  const wrapper = document.createElement('div'); wrapper.className = 'question card';
+  const title = document.createElement('div'); title.innerHTML = '<strong>Pregunta '+(i+1)+'.</strong> '+q.q; wrapper.appendChild(title);
   const choices = document.createElement('div'); choices.className = 'choices';
-  q.choices.forEach((c, idx) => {
-    const id = 'c_' + i + '_' + idx;
-    const label = document.createElement('label'); label.className = 'choice';
-    const radio = document.createElement('input'); radio.type = 'radio'; radio.name = 'q'+i; radio.value = idx; radio.id = id;
-    if(answers[i] === idx) radio.checked = true;
-    const span = document.createElement('div'); span.innerText = String.fromCharCode(97+idx)+')  '+c;
+
+  shuffled.forEach((choiceObj,displayIdx)=>{
+    const id='c_'+i+'_'+displayIdx;
+    const label=document.createElement('label'); label.className='choice';
+    const radio=document.createElement('input'); radio.type='radio'; radio.name='q'+i; radio.value=choiceObj.idx; radio.id=id;
+    if(answers[i]===choiceObj.idx) radio.checked=true;
+    const span=document.createElement('div'); span.innerText=String.fromCharCode(97+displayIdx)+')  '+choiceObj.text;
     label.appendChild(radio); label.appendChild(span);
     choices.appendChild(label);
   });
+
   wrapper.appendChild(choices);
-  quizCard.appendChild(wrapper);
+  quizArea.appendChild(wrapper);
   countEl.innerText = questions.length;
-  prevBtn.disabled = i === 0;
-  nextBtn.disabled = i === questions.length - 1;
 }
 
-// ----------------- QUIZ: save answer & navigation -----------------
 function saveAnswer(i){
-  const radios = document.getElementsByName('q'+i);
-  for(const r of radios) if(r.checked){ answers[i] = parseInt(r.value); return; }
-  answers[i] = undefined;
+  const radios=document.getElementsByName('q'+i);
+  for(const r of radios) if(r.checked){ answers[i]=parseInt(r.value); return }
+  answers[i]=undefined;
 }
 
-prevBtn.addEventListener('click', ()=>{ if(current>0){ saveAnswer(current); current--; renderQuestion(current); } });
-nextBtn.addEventListener('click', ()=>{ if(current<questions.length-1){ saveAnswer(current); current++; renderQuestion(current); } });
-
-quizCard.addEventListener('change', (e)=>{ if(e.target && e.target.type === 'radio'){ saveAnswer(current); } });
-
-finishTestBtn.addEventListener('click', showResults);
-
-restartBtn.addEventListener('click', ()=>{ answers = Array(questions.length).fill(undefined); current = 0; resultsEl.style.display='none'; renderQuestion(0); window.scrollTo({top:0,behavior:'smooth'}); });
-
-// ----------------- SHOW RESULTS (NO PENALIZACIÓN POR FALLOS) -----------------
 function showResults(){
   saveAnswer(current);
-  resultsEl.style.display = 'block';
-  resultsEl.innerHTML = '';
-  let correct = 0, wrong = 0, empty = 0;
-  questions.forEach((q, idx)=>{
-    const user = answers[idx];
-    const ok = user === q.answer;
-    if(user === undefined) empty++;
+  resultsEl.style.display='block';
+  resultsEl.innerHTML='';
+  let correct=0, wrong=0, empty=0;
+  questions.forEach((q,idx)=>{
+    const user=answers[idx];
+    const ok=user===q.answer;
+    if(user===undefined) empty++;
     else if(ok) correct++; else wrong++;
-    const qdiv = document.createElement('div'); qdiv.className = 'question ' + (user === undefined ? '' : (ok ? 'correct' : 'incorrect'));
-    let inner = '<strong>Pregunta '+(idx+1)+' — '+(ok?'Correcta':'Incorrecta')+'</strong>';
-    if(q.img) inner += '<div><img src="'+q.img+'" class="q-thumb"></div>';
-    inner += '<div style="margin-top:6px">Tu respuesta: '+(user===undefined?'<i>sin responder</i>':String.fromCharCode(97+user)+') '+q.choices[user])+'</div>';
-    inner += '<div>Respuesta correcta: <strong>'+String.fromCharCode(97+q.answer)+') '+q.choices[q.answer]+'</strong></div>';
-    qdiv.innerHTML = inner;
+    const qdiv=document.createElement('div'); qdiv.className='question '+(user===undefined?'':(ok?'correct':'incorrect'));
+    qdiv.innerHTML='<strong>Pregunta '+(idx+1)+' — '+(user===undefined? 'Sin responder' : (ok?'Correcta':'Incorrecta'))+'</strong><div style="margin-top:6px">Tu respuesta: '+(user===undefined?'<i>sin responder</i>':String.fromCharCode(97+user)+') '+q.choices[user])+'</div><div>Respuesta correcta: <strong>'+String.fromCharCode(97+q.answer)+') '+q.choices[q.answer]+'</strong></div>';
     resultsEl.appendChild(qdiv);
   });
-  // Score: no penalty — simple percent of correct answers
-  const score = questions.length ? (correct / questions.length) * 100 : 0;
-  const summary = document.createElement('div'); summary.className = 'card'; summary.style.marginTop = '10px';
-  summary.innerHTML = '<div class="summary"><div class="chip">Aciertos: '+correct+'</div><div class="chip">Fallos: '+wrong+'</div><div class="chip">Sin responder: '+empty+'</div><div class="chip">Nota: '+score.toFixed(2)+'%</div></div>';
+
+  // Calificación "como en examen real" (0 a 10) con penalización: -1/3 por fallo
+  const netCorrect = Math.max(0, correct - (wrong/3));
+  const fraction = questions.length ? (netCorrect / questions.length) : 0;
+  const grade = Math.round(fraction * 10 * 100) / 100; // redondeo a 2 decimales
+  const percent = Math.round(fraction * 100 * 100) / 100;
+
+  const summary=document.createElement('div'); summary.className='card'; summary.style.marginTop='10px';
+  summary.innerHTML = '<div class="summary"><div class="chip">Aciertos: '+correct+'</div><div class="chip">Fallos: '+wrong+'</div><div class="chip">Sin responder: '+empty+'</div><div class="chip">Nota (0-10): '+grade+'</div><div class="chip">Porcentaje: '+percent+'%</div></div>';
   resultsEl.prepend(summary);
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// ----------------- ADMIN BUTTON (protected) -----------------
-adminBtn.addEventListener('click', ()=>{
-  // if locked = test loaded from data.json -> ask for password to enter admin
-  if(locked){
-    const code = prompt('Contraseña admin:');
-    if(code !== 'a'){ alert('Contraseña incorrecta'); return; }
-  }
-  // show builder
-  builder.style.display = 'block';
-  quizAreaMain.style.display = 'none';
-  renderList();
-});
-
-// ----------------- fallback: if builder visible initially, renderList -----------------
-if(builder.style.display === 'block') renderList();
+// ===== EVENTOS =====
+document.getElementById('prevBtn').addEventListener('click',()=>{if(current>0){saveAnswer(current);current--;renderQuestion(current);}});
+document.getElementById('nextBtn').addEventListener('click',()=>{if(current<questions.length-1){saveAnswer(current);current++;renderQuestion(current);}});
+document.getElementById('finishBtn').addEventListener('click',showResults);
+document.getElementById('restartBtn').addEventListener('click',()=>{loadTest(parseInt(document.getElementById('testSelector').value));});
+quizArea.addEventListener('change',(e)=>{if(e.target&&e.target.type==='radio') saveAnswer(current);});
+document.getElementById('testSelector').addEventListener('change',e=>{loadTest(parseInt(e.target.value));});
+window.onload = ()=> loadTest(1);
 </script>
 </body>
 </html>
